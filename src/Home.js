@@ -42,7 +42,7 @@ function Home() {
                   <div className="flex invisible md:visible logo absolute ml-5 mt-5 w-32 h-14 bg-blue-dark shadow-logo blur-sm transition duration-100 ease-in hover:bg-dark-blurple">
                      <h1 className='amimate__animated flex mx-auto items-center h-full leading-5 font-lato font-light text-center text-2xl tracking-wide text-semi-white'>YT Diff</h1>
                   </div>
-                  <div className="w-full relative top-4 md:top-28 ">
+                  <div className="align-self w-auto relative top-4 md:top-28 ">
                      <h1 className="text-center sm:drop-shadow-lg text-2xl md:text-3xl lg:text-4xl font-lato font-light tracking-wide text-semi-white">A tool for comparing video playlists on YouTube.</h1>
                   </div>
                   <div className="absolute w-9/12 bottom-8 md:bottom-28 right-2 md:right-8">
@@ -61,6 +61,19 @@ function Home() {
                            // Otherwise just get the last element
                            <InfoText text={infoData[infoIndex - 1]['info']} comeIn={false}></InfoText>)
                         }
+                        {/* {
+                           // If it is it's turn to come in, get current element.
+                           ((turn) % 2 == 1) ? <InfoText text={infoData[infoIndex]['info']} comeIn={true}></InfoText> : 
+                           // If it is not its turn to come in
+                           // If the index is 0, get the last element of entire thing
+                           ((infoIndex == 0) ? <InfoText text={infoData[infoData.length - 1]['info']} comeIn={false}></InfoText> : 
+                           // Otherwise just get the last element
+                           <InfoText text={infoData[infoIndex - 1]['info']} comeIn={false}></InfoText>)
+                        } */}
+                     </div>
+                  </div>
+                  <div className="absolute w-9/12 bottom-8 md:bottom-28 right-2 md:right-8">
+                     <div className="h-full w-full">
                         {
                            // If it is it's turn to come in, get current element.
                            ((turn) % 2 == 1) ? <InfoText text={infoData[infoIndex]['info']} comeIn={true}></InfoText> : 
@@ -71,8 +84,6 @@ function Home() {
                            <InfoText text={infoData[infoIndex - 1]['info']} comeIn={false}></InfoText>)
                         }
                      </div>
-
-
                   </div>
                </div>
             </div>
