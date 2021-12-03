@@ -4,6 +4,7 @@ import Differ from './Differ'
 import Error from './Error'
 import Settings from './Settings'
 import './index.css'
+import "animate.css"
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
 function App() {

@@ -15,8 +15,29 @@ root {
 
 body {
    font-family: 'Lato', sans-serif;
+   margin: 0;
 }
 
 .grad-bkg {
    background: linear-gradient(0deg, rgba(57, 80, 96, 0.4) 0%, rgba(217, 87, 119, 0.4) 100%), linear-gradient(105.9deg, #E63963 0.32%, #1D3557 90.61%);
+}
+
+.arrow-cont {
+   bottom: 10px;
+   left: 50%;
+   transform: translate(-50%);
+   filter: invert(100%);
+}
+
+.fit-img {
+   object-fit: cover;
+   width: 100vh;
+   height: 25vh;
+   max-width: 100%;
+}
+
+@media (min-width: 768px) {
+   .fit-img {
+      height: 50vh;
+   }
 }

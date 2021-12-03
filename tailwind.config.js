@@ -27,8 +27,14 @@ module.exports = {
        screens: {
           
        },
+       backgroundColor: {
+         captBar: 'rgba(29, 53, 87, 0.2)',
+         arrowBox: 'rgba(196, 196, 196, 0.00001)',
+       },
        boxShadow: {
-          logo: '4px 4px 4px 1px rgba(0, 0, 0, 0.25)'
+          logo: '4px 4px 4px 1px rgba(0, 0, 0, 0.25)',
+          captBar: '0px 5px 4px rgba(0, 0, 0, 0.25)',
+          arrowBox: '0px 0px 4px rgba(0, 0, 0, 0.5)'
        },
        fontFamily: {
          //  "lato": ['Lato']
