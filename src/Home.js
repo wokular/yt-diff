@@ -63,7 +63,7 @@ function Home() {
    return (
 
       <main>
-         <section className='flex w-screen rel-height h-1/4 md:h-1/2'>
+         <section className='home-section flex w-screen rel-height h-1/4 md:h-1/2'>
             <div className='bg-gray-500 flex-1 w-1/2'>
                <div className="relative grad-bkg h-full w-full">
                   <div className="flex invisible md:visible logo absolute ml-5 mt-5 w-32 h-14 bg-blue-dark shadow-logo blur-sm hover:bg-dark-blurple">
