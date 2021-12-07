@@ -69,8 +69,8 @@ function Home() {
                   <div className="logo-box">
                      <h1 className='logo-text'>YT Diff</h1>
                   </div>
-                  <div className="landing-text align-self w-auto relative top-4 md:top-28 ">
-                     <h1 className="text-center sm:drop-shadow-lg text-2xl md:text-3xl lg:text-4xl font-lato font-light tracking-wide text-semi-white">A tool for comparing video playlists on YouTube.</h1>
+                  <div className="landing-text-cont align-self w-auto relative top-4 md:top-28 ">
+                     <h1 className="landing-text text-center sm:drop-shadow-lg text-2xl md:text-3xl lg:text-4xl font-lato font-light tracking-wide text-semi-white">A tool for comparing video playlists on YouTube.</h1>
                   </div>
                   <div className="absolute w-9/12 bottom-8 md:bottom-28 right-2 md:right-8">
                      <div className="h-full w-full">
@@ -105,7 +105,7 @@ function Home() {
                   </div>
                </div>
             </div>
-            <div className="relative flex-1 w-1/2">
+            <div className="right-box-cont relative flex-1 w-1/2">
                <div className="ui-element-cont w-1/2 h-1/2">
 
                   <div className="absolute img-cont w-full h-full">
