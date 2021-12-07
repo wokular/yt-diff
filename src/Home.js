@@ -63,13 +63,13 @@ function Home() {
    return (
 
       <main>
-         <section className='home-section flex w-screen rel-height h-1/4 md:h-1/2'>
-            <div className='bg-gray-500 flex-1 w-1/2'>
-               <div className="relative grad-bkg h-full w-full">
-                  <div className="flex invisible md:visible logo absolute ml-5 mt-5 w-32 h-14 bg-blue-dark shadow-logo blur-sm hover:bg-dark-blurple">
-                     <h1 className='flex mx-auto items-center h-full leading-5 font-lato font-light text-center text-2xl tracking-wide text-semi-white'>YT Diff</h1>
+         <section className='home-section'>
+            <div className='left-box-cont'>
+               <div className="grad-bkg">
+                  <div className="logo-box">
+                     <h1 className='logo-text'>YT Diff</h1>
                   </div>
-                  <div className="align-self w-auto relative top-4 md:top-28 ">
+                  <div className="landing-text align-self w-auto relative top-4 md:top-28 ">
                      <h1 className="text-center sm:drop-shadow-lg text-2xl md:text-3xl lg:text-4xl font-lato font-light tracking-wide text-semi-white">A tool for comparing video playlists on YouTube.</h1>
                   </div>
                   <div className="absolute w-9/12 bottom-8 md:bottom-28 right-2 md:right-8">
