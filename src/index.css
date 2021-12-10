@@ -25,16 +25,36 @@ body {
 .topLeftCont {
    width: 100%;
    height: 100%;
+   margin: 0;
+   display: grid;
 }
 
 .tlcBkg {
    margin-top: 0px;
    width: 100%;
    height: 100%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-template-rows: repeat(4, 1fr);
+
 }
 
 .gradBkg {
    background: linear-gradient(0deg, rgba(57, 80, 96, 0.4) 0%, rgba(217, 87, 119, 0.4) 100%), linear-gradient(105.9deg, #E63963 0.32%, #1D3557 90.61%);
+}
+
+.logoCont {
+   grid-column: 1;
+   width: 140px;
+   top: 2rem;
+   left: 2rem;
+   background-color: var(--darkblue);
+   box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.25);
+   backdrop-filter: blur(4px);
+}
+
+.logoText {
+
 }
 
 .arrow-cont {
@@ -50,9 +70,13 @@ body {
    height: 50vh;
 }
 
-@media (min-width: 768px) {
+@media (max-width: 768px) {
    .fit-img {
       height: 50vh;
+   }
+   .logoCont {
+      transform: translateY(50%);
+      width: 50%;
    }
 }
 
