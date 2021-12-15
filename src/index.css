@@ -15,6 +15,17 @@ body {
    margin: 0;
 }
 
+h1 {
+   font-family: Lato;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 32px;
+   line-height: 150%;
+   color: var(--semi-white);
+}
+
+/* Splits page into top half */
+
 .topHalfCont {
    width: 100vw;
    height: 50vh;
@@ -22,39 +33,96 @@ body {
    flex: 1 1;
 }
 
+/* Isolates left top half section */
+
 .topLeftCont {
    width: 100%;
    height: 100%;
    margin: 0;
+   /* Don't know why I use grid, but keeps it inside box */
    display: grid;
 }
+
+/* Styles for gradient box, which acts as overall parent for all children inside */
 
 .tlcBkg {
    margin-top: 0px;
    width: 100%;
    height: 100%;
-   display: grid;
-   grid-template-columns: repeat(3, 1fr);
-   grid-template-rows: repeat(4, 1fr);
-
+   position: relative;
 }
+
+/* Sets gradient background */
 
 .gradBkg {
    background: linear-gradient(0deg, rgba(57, 80, 96, 0.4) 0%, rgba(217, 87, 119, 0.4) 100%), linear-gradient(105.9deg, #E63963 0.32%, #1D3557 90.61%);
 }
 
+/* Acts as parent for logo text and creates the box of the logo */
+
 .logoCont {
-   grid-column: 1;
-   width: 140px;
-   top: 2rem;
-   left: 2rem;
+   transform: translateX(16px);
+   width: 144px;
+   height: auto;
    background-color: var(--darkblue);
    box-shadow: 4px 4px 4px 1px rgba(0, 0, 0, 0.25);
    backdrop-filter: blur(4px);
+   border-radius: 2px;
+   position: relative;
+   cursor: pointer;
+   user-select: none;
 }
 
-.logoText {
+/* Sets the text of logo */
 
+.logoText {
+   height: 100%;
+   width: 100%;
+   text-align: center;
+   padding: 10px 0px 10px 0px;
+   font-weight: 300;
+   font-size: 24px;
+   color: var(--semi-white);
+}
+
+/* Container for description text */
+
+.descCont {
+   width: auto;
+   height: auto;
+   margin: 16px;
+} 
+
+/* Modify the h1 text so it's space apart a bit more (see about moving this) */
+
+h1.descText {
+   letter-spacing: 0.02em;
+}
+
+/* This is used as the parent for the moving text containers, which sets them at bottom of overall grad box */
+
+.infoTextCont {
+   position: absolute;
+   width: 100%;
+   height: 25%;
+   bottom: 0px;
+}
+
+/* Act as containers for text, allowing for overlap with absolute */
+
+.infoText1Cont, .infoText2Cont {
+   position: absolute;
+   width: 60%;
+   height: auto;
+   padding: 12px;
+   left: 0;
+}
+
+/* Physical text we see in infoText */
+
+.infoTextStyle {
+   text-align: left;
+   font-size: 16px;
 }
 
 .arrow-cont {
@@ -75,7 +143,6 @@ body {
       height: 50vh;
    }
    .logoCont {
-      transform: translateY(50%);
       width: 50%;
    }
 }

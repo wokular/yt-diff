@@ -69,11 +69,11 @@ function Home() {
                   <div className="logoCont">
                      <h1 className='logoText'>YT Diff</h1>
                   </div>
-                  <div className="blank">
-                     <h1 className="blank">A tool for comparing video playlists on YouTube.</h1>
+                  <div className="descCont">
+                     <h1 className="descText">A tool for comparing video playlists on YouTube.</h1>
                   </div>
-                  <div className="blank">
-                     <div className="blank">
+                  <div className="infoTextCont">
+                     <div className="infoText1Cont">
                         {
                            // On every even turn, the first one will come in and the second one will stay.
                            // The new one coming in will have the new value, and the one going out will have the last value.
@@ -89,9 +89,7 @@ function Home() {
                                  <InfoText text={infoData[infoIndex - 1]['info']} comeIn={false}></InfoText>)
                         }
                      </div>
-                  </div>
-                  <div className="blank">
-                     <div className="blank">
+                     <div className="infoText2Cont">
                         {
                            // If it is it's turn to come in, get current element.
                            ((turn) % 2 == 1) ? <InfoText text={infoData[infoIndex]['info']} comeIn={true}></InfoText> :
