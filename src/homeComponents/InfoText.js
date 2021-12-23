@@ -8,15 +8,15 @@ const InfoText = (props) => {
    let text = props.text;
    let comeIn = props.comeIn;
 
-   useEffect(() => {
-      // wait 1s then change classnames
-      setTimeout(() => {
-         if (comeIn) {
-            console.log('Set true');
-            setReset(true)
-         }
-      }, 2000);
-   }, [])
+   // useEffect(() => {
+   //    // wait 2s then change classnames
+   //    setTimeout(() => {
+   //       if (comeIn) {
+   //          console.log('Set true');
+   //          setReset(true)
+   //       }
+   //    }, 2000);
+   // }, [])
 
    return (
       <div className={`animate__animated ${comeIn ? "animate__fadeInRight" : "animate__fadeOutLeft"}`}>

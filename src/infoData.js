@@ -9,7 +9,7 @@ const InfoData = [
    }, 
    {
       id: 2,
-      "info": "This is actually advice. Complement girls and smile more 3"
+      "info": "This is actually advice. Try to work on popups 3"
    }, 
    {
       id: 3,

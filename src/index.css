@@ -10,6 +10,7 @@
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
 body {
    font-family: 'Lato', sans-serif;
    margin: 0;
@@ -36,7 +37,7 @@ h1 {
 /* Isolates left top half section */
 
 .topLeftCont {
-   width: 100%;
+   width: 50%;
    height: 100%;
    margin: 0;
    /* Don't know why I use grid, but keeps it inside box */
@@ -106,6 +107,7 @@ h1.descText {
    width: 100%;
    height: 25%;
    bottom: 0px;
+   overflow: none;
 }
 
 /* Act as containers for text, allowing for overlap with absolute */
@@ -115,35 +117,126 @@ h1.descText {
    width: 60%;
    height: auto;
    padding: 12px;
-   left: 0;
+   right: 0;
 }
 
 /* Physical text we see in infoText */
 
 .infoTextStyle {
-   text-align: left;
-   font-size: 16px;
+   font-family: Lato;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 18px;
+   line-height: 29px;
+   text-align: right;
+   letter-spacing: 0.02em;
+   color: var(--semi-white)
 }
 
-.arrow-cont {
-   bottom: 10px;
-   left: 50%;
-   transform: translate(-50%);
-   filter: invert(100%);
+.topRightCont {
+   width: 50vw;
+   height: 50vh;
+   position: relative;
+   z-index: 10;
+   overflow: hidden;
 }
 
-.fit-img {
+.imgParCont {
+   position: absolute;
+   height: 100%;
+   width: 100%;
+}
+
+.imgPar {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   right: 0;
+}
+
+.imgCont1, .imgCont2 {
+   height: 100%;
+   width: 100%;
+}
+
+.fitImg {
    object-fit: cover;
    width: 50vw;
    height: 50vh;
 }
 
+.captBarCont {
+   position: absolute;
+   top: 0px;
+   width: 50vw;
+   height: 50px;
+}
+
+.captBar {
+   position: absolute;
+   width: 50vw;
+   height: 100%;
+   background: rgba(29, 53, 87, 0.3);
+   box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.5);
+}
+
+.captBarText {
+   height: 100%;
+   margin: 0px 10px 0px 10px;
+   font-size: 20px;
+   line-height: 250%;
+   font-weight: 200;
+   text-align: center;
+}
+
+.arrowCont {
+   position: absolute;
+   width: 80px;
+   bottom: 10px;
+   left: 50%;
+   transform: translate(-50%);
+   display: flex;
+   justify-content: space-evenly;
+}
+
+.arrowBtn {
+   border: none;
+   background: transparent;
+   cursor: pointer;
+   transition-duration: .2s;
+   transition-timing-function: cubic-bezier(.3, .7, .4, 1.5)
+}
+
+.arrowBtn:hover {
+   transition-timing-function: cubic-bezier(.3, .7, .4, 1.5);
+   transform: scale(1.2);
+}
+
+.arrLeft:hover {
+   transform: translateX(-2px);
+}
+.arrRight:hover {
+   transform: translateX(2px);
+}
+
+.faArr {
+   transition-duration: .1s;
+}
+
+.faArr {
+   color: var(--semi-white);
+}
+
 @media (max-width: 768px) {
-   .fit-img {
+   .fitImg {
       height: 50vh;
    }
    .logoCont {
       width: 50%;
+   }
+   .infoTextCont {
+      display: none;
+      text-overflow: none;
    }
 }
 
