@@ -19,6 +19,10 @@ const InfoData = [
       id: 4,
       "info": "Again a really long one, so I just want to see how it handles when they are really long like this 5"
    }, 
+   {
+      id: 5,
+      "info": "a super cool test here 6"
+   }, 
 ]
 
 export default InfoData

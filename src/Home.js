@@ -1,5 +1,7 @@
-import React, { react, useState, useEffect } from 'react'
+import React, { react, useState, useEffect, useMemo } from 'react'
+import debounce from 'lodash.debounce'
 import InfoText from './homeComponents/InfoText'
+import ImgCap from './imgCap'
 import ImageSlide from './homeComponents/ImageSlide'
 import infoData from './infoData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -13,9 +15,8 @@ function Home() {
    const [turnImg, setTurnImg] = useState(0)
    const [imgIndex, setImg] = useState(0)
    const [prevImgIndex, setPrevImg] = useState(4)
-   const imgCount = 5;
    const [btnPressed, setBtnPressed] = useState("right")
-
+   const imgCount = 5;
 
    // Question: does having two useState functions called once after another in 2 lines rerender twice, causing the second one to render differently? Should I use let instead of a useState for prevImgIndex?
 
@@ -70,7 +71,12 @@ function Home() {
 
    // Button functionality for image slider
    function btnLeft() {
+
       setBtnPressed("left")
+      setTurnImg(num => {
+         return num += 1;
+      })
+
       if (imgIndex == 0) {
          // Set it to max
          setPrevImg(imgIndex)
@@ -85,7 +91,12 @@ function Home() {
    }
 
    function btnRight() {
+
       setBtnPressed("right")
+      setTurnImg(num => {
+         return num += 1;
+      })
+
       if (imgIndex == imgCount - 1) {
          setPrevImg(imgIndex)
          setImg(0)
@@ -143,26 +154,51 @@ function Home() {
             <div className="topRightCont">
                <div className="imgParCont">
                   {
-                     // One image component
-                     (btnPressed == "left") ? 
-                        (imgIndex == imgCount - 1) ?
-                           <ImageSlide side={'l'} comeIn={false} imgNum={0}></ImageSlide> :
-                           <ImageSlide side={'l'} comeIn={false} imgNum={prevImgIndex}></ImageSlide> :
-                        <ImageSlide side={'l'} comeIn={true} imgNum={imgIndex}></ImageSlide>
+
+                     // If its turn to come in
+                     (turnImg % 2 == 0) ?
+                        // If btn pressed was left side
+                        (btnPressed == "left") ?
+                           // Come in from the left, because the user wants the images to go to right, and more content from the left
+                           <ImageSlide anim="slideInLeft" imgNum={imgIndex}></ImageSlide>
+                           :
+                           // Come in from the right, because the user wants the images to go to left, and more content from the right
+                           <ImageSlide anim="slideInRight" imgNum={imgIndex}></ImageSlide>
+                        :
+                        (btnPressed == "left") ?
+                           // Leave to the right because content is coming from the left from left btn push
+                           <ImageSlide anim="slideOutRight" imgNum={prevImgIndex}></ImageSlide>
+                           :
+                           // Leave to the left because content is coming from the right from right btn push
+                           <ImageSlide anim="slideOutLeft" imgNum={prevImgIndex}></ImageSlide>
+
+
                   }
                   {
-                     // Two image component
-                     (btnPressed == "right") ? 
-                        (imgIndex == 0) ?
-                           <ImageSlide side={'r'} comeIn={false} imgNum={imgCount - 1}></ImageSlide> :
-                           <ImageSlide side={'r'} comeIn={false} imgNum={prevImgIndex}></ImageSlide> :
-                        <ImageSlide side={'r'} comeIn={true} imgNum={imgIndex}></ImageSlide>
+
+                     // Same logic from above, but turns are swapped
+                     (turnImg % 2 == 1) ?
+                        (btnPressed == "left") ?
+                           <ImageSlide anim="slideInLeft" imgNum={imgIndex}></ImageSlide>
+                           :
+                           <ImageSlide anim="slideInRight" imgNum={imgIndex}></ImageSlide>
+                        :
+                        (btnPressed == "left") ?
+                           <ImageSlide anim="slideOutRight" imgNum={prevImgIndex}></ImageSlide>
+                           :
+                           <ImageSlide anim="slideOutLeft" imgNum={prevImgIndex}></ImageSlide>
+
+
                   }
                </div>
 
                <div className="captBarCont">
                   <div className="captBar">
-                     <h1 className="captBarText">Here is the caption</h1>
+                     <h1 className="captBarText">
+                        {
+                           ImgCap[imgIndex]['caption']
+                        }
+                     </h1>
                   </div>
                </div>
 
@@ -176,9 +212,7 @@ function Home() {
                </div>
 
                <div className="imgNumCont">
-                  <div className="imgNum">
-                     <h3>1 / 5</h3>
-                  </div>
+                  <h2 className="imgNum">{imgIndex + 1} / 5</h2>
                </div>
 
             </div>

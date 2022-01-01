@@ -11,6 +11,10 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+.animate__animated.animate__slideInRight, .animate__animated.animate__slideInLeft, .animate__animated.animate__slideOutLeft, .animate__animated.animate__slideOutRight {
+   --animate-duration: .65s;
+ }
+
 body {
    font-family: 'Lato', sans-serif;
    margin: 0;
@@ -225,6 +229,30 @@ h1.descText {
 
 .faArr {
    color: var(--semi-white);
+}
+
+.imgNumCont {
+   position: absolute;
+   bottom: 10px;
+   right: 10px;
+   width: 40px;
+   height: 20px;
+}
+
+.imgNum {
+   /* Basic font styling */
+   font-family: Lato;
+   font-style: normal;
+   font-weight: 300;
+   font-size: 14px;
+   line-height: 29px;
+   text-align: right;
+   letter-spacing: 0.02em;
+   color: var(--semi-white);
+
+   /* Positioning */
+   height: 20px;
+   margin: 0;
 }
 
 @media (max-width: 768px) {
