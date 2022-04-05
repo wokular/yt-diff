@@ -156,6 +156,7 @@ h1.descText {
    width: 100%;
    height: 100%;
    right: 0;
+   will-change: transform;
 }
 
 .imgCont1, .imgCont2 {
@@ -253,6 +254,114 @@ h1.descText {
    /* Positioning */
    height: 20px;
    margin: 0;
+}
+
+.btmHalfCont {
+   width: 100vw;
+   height: 50vh;
+   display: flex;
+   flex: 1 1;
+   position: relative;
+}
+
+.startCont {
+   position: absolute;
+   width: 100vw;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   align-content: flex-end;
+}
+
+.startBtnCont {
+   height: auto;
+   width: auto;
+}
+
+.startBtn {
+   width: 200px;
+   height: 60px;
+   border-radius: 20px 20px 18px 18px;
+   border: none;
+   background: transparent;
+   padding: 0;
+
+}
+
+.startBtnBkg {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+
+   width: 200px;
+   height: 60px;
+   border-radius: 20px 20px 18px 18px;
+   border: 5px;
+   border-color: black;
+   background: linear-gradient(27deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 60%, rgba(252,176,69,1) 100%);
+
+   transition: box-shadow .15s, transform .15s, font-size .10s, width .10s, height .10s, border-radius .10s;
+   will-change: box-shadow, transform, font-size, border-radius;
+
+   color: var(--semi-white);
+   font-size: 18px;
+   letter-spacing: 0.05em;
+   font-weight: 600;
+}
+
+.startBtn:hover .startBtnBkg {
+   cursor: pointer;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+   transform: translateY(-10px);
+}
+
+.startBtn:active .startBtnBkg {
+   font-size: 24px;
+   transform: translateY(-10px);
+   box-shadow: rgba(0, 0, 0, 0.54) 0px 5px 20px;
+   border-radius: 24px 24px 24px 24px;
+}
+
+
+.btmBarCont {
+   width: 100vw;
+   height: 40px;
+   position: absolute;
+   bottom: 0;
+   background-color: var(--darkblue);
+   box-shadow: rgba(0, 0, 0, 0.25) 0px -6px 5px 1px;
+}
+
+.btmBarElementCont {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.barTextEle {
+   font-weight: lighter;
+   font-size: 12px;
+   flex-grow: 0;
+   flex-shrink: 0;
+   flex-basis: auto;
+   order: 0;
+   margin-left: 8px;
+   margin-right: 8px;
+   line-height: 0px;
+}
+
+.barTextEleLink {
+   text-decoration: none;
 }
 
 @media (max-width: 768px) {

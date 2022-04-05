@@ -3,6 +3,7 @@ import debounce from 'lodash.debounce'
 import InfoText from './homeComponents/InfoText'
 import ImgCap from './imgCap'
 import ImageSlide from './homeComponents/ImageSlide'
+import BarItem from './homeComponents/barItem'
 import infoData from './infoData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
@@ -215,6 +216,24 @@ function Home() {
                   <h2 className="imgNum">{imgIndex + 1} / 5</h2>
                </div>
 
+            </div>
+         </section>
+         <section className="btmHalfCont">
+            <div className="startCont">
+               <div className="startBtnCont">
+                  <button className="startBtn" onClick={() => {console.log("Hello")}}>
+                     <span className="startBtnBkg">Hit Start!</span>
+                  </button>
+               </div>
+            </div>
+            <div className="btmBarCont">
+               <div className="btmBarElementCont">
+                  <BarItem to="/terms">Terms</BarItem>
+                  <BarItem to="/contact">Contact</BarItem>
+                  <BarItem>© Helmet</BarItem>
+                  <BarItem to="/about">About</BarItem>
+                  <BarItem to="/privacy">Privacy</BarItem>
+               </div>
             </div>
          </section>
 
