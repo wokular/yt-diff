@@ -156,6 +156,7 @@ h1.descText {
    width: 100%;
    height: 100%;
    right: 0;
+   will-change: transform;
 }
 
 .imgCont1, .imgCont2 {
@@ -255,6 +256,122 @@ h1.descText {
    margin: 0;
 }
 
+.btmHalfCont {
+   width: 100vw;
+   height: 50vh;
+   display: flex;
+   flex: 1 1;
+   position: relative;
+}
+
+.startCont {
+   position: absolute;
+   width: 100vw;
+   height: 100%;
+   display: flex;
+   flex-direction: column;
+   flex-wrap: nowrap;
+   justify-content: center;
+   align-items: center;
+   align-content: flex-end;
+}
+
+.startBtnCont {
+   height: auto;
+   width: auto;
+}
+
+.startBtn {
+   width: 200px;
+   height: 60px;
+   border-radius: 20px 20px 18px 18px;
+   border: none;
+   background: transparent;
+   padding: 0;
+   text-decoration: none;
+
+}
+
+.startBtnBkg {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+
+   width: 200px;
+   height: 60px;
+   border-radius: 20px 20px 18px 18px;
+   border: 5px;
+   border-color: black;
+   background: linear-gradient(27deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 60%, rgba(252,176,69,1) 100%);
+
+   transition: box-shadow .15s, transform .15s, font-size .10s, width .10s, height .10s, border-radius .10s;
+   will-change: box-shadow, transform, font-size, border-radius;
+
+   color: var(--semi-white);
+   font-size: 18px;
+   letter-spacing: 0.05em;
+   font-weight: 600;
+}
+
+.startBtn:hover .startBtnBkg {
+   cursor: pointer;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 5px 8px;
+   transform: translateY(-10px);
+}
+
+.startBtn:active .startBtnBkg {
+   font-size: 24px;
+   transform: translateY(-10px);
+   box-shadow: rgba(0, 0, 0, 0.54) 0px 5px 20px;
+   border-radius: 24px 24px 24px 24px;
+}
+
+
+.btmBarCont {
+   width: 100vw;
+   height: 40px;
+   position: absolute;
+   bottom: 0;
+   background-color: var(--darkblue);
+   box-shadow: rgba(0, 0, 0, 0.25) 0px -6px 5px 1px;
+}
+
+.btmBarElementCont {
+   width: 100%;
+   height: 100%;
+   margin: 0;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   align-content: center;
+}
+
+.barTextEle {
+   font-weight: lighter;
+   font-size: 12px;
+   flex-grow: 0;
+   flex-shrink: 0;
+   flex-basis: auto;
+   order: 0;
+   margin-left: 8px;
+   margin-right: 8px;
+   line-height: 0px;
+   will-change: font-weight, margin-left, margin-right;
+   transition: font-weight .15s, margin-left .15s, margin-right .15s;
+}
+
+.barTextEle:hover {
+   font-weight: bolder;
+   margin-left: 12px;
+   margin-right: 12px;
+}
+
+.barTextEleLink {
+   text-decoration: none;
+}
+
 @media (max-width: 768px) {
    .fitImg {
       height: 50vh;
@@ -267,54 +384,3 @@ h1.descText {
       text-overflow: none;
    }
 }
-
-
-/* 
-const colors = require('tailwindcss/colors')
-
-module.exports = {
-purge: [],
-darkMode: false, // or 'media' or 'class'
-theme: {
-   extend: {
-      colors: {
-         blue: {
-            'light': '#a8dadc',
-            'darker': '#041b2d',
-            'dark': '#1d3557',
-            'med': '#457b9d',
-            
-         },
-         'magenta': '#B80E65',
-         'semi-white': '#F8F9FA',
-         'dark-blurple': '#1c1b4d',
-         'red': '#e63946',
-
-      },
-      height: {
-         '1/2': '50vh',
-         '3/4': '75vh',
-         '1/4': '25vh'
-      },
-      screens: {
-         
-      },
-      backgroundColor: {
-         captBar: 'rgba(29, 53, 87, 0.2)',
-         arrowBox: 'rgba(196, 196, 196, 0.00001)',
-      },
-      boxShadow: {
-         logo: '4px 4px 4px 1px rgba(0, 0, 0, 0.25)',
-         captBar: '0px 5px 4px rgba(0, 0, 0, 0.25)',
-         arrowBox: '0px 0px 4px rgba(0, 0, 0, 0.5)'
-      },
-      fontFamily: {
-         //  "lato": ['Lato']
-      }
-   },
-},
-variants: {
-   extend: {},
-},
-plugins: [],
-} */
