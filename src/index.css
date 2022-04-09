@@ -288,6 +288,7 @@ h1.descText {
    border: none;
    background: transparent;
    padding: 0;
+   text-decoration: none;
 
 }
 
@@ -295,7 +296,6 @@ h1.descText {
    display: inline-flex;
    align-items: center;
    justify-content: center;
-
 
    width: 200px;
    height: 60px;
@@ -358,6 +358,14 @@ h1.descText {
    margin-left: 8px;
    margin-right: 8px;
    line-height: 0px;
+   will-change: font-weight, margin-left, margin-right;
+   transition: font-weight .15s, margin-left .15s, margin-right .15s;
+}
+
+.barTextEle:hover {
+   font-weight: bolder;
+   margin-left: 12px;
+   margin-right: 12px;
 }
 
 .barTextEleLink {
@@ -376,54 +384,3 @@ h1.descText {
       text-overflow: none;
    }
 }
-
-
-/* 
-const colors = require('tailwindcss/colors')
-
-module.exports = {
-purge: [],
-darkMode: false, // or 'media' or 'class'
-theme: {
-   extend: {
-      colors: {
-         blue: {
-            'light': '#a8dadc',
-            'darker': '#041b2d',
-            'dark': '#1d3557',
-            'med': '#457b9d',
-            
-         },
-         'magenta': '#B80E65',
-         'semi-white': '#F8F9FA',
-         'dark-blurple': '#1c1b4d',
-         'red': '#e63946',
-
-      },
-      height: {
-         '1/2': '50vh',
-         '3/4': '75vh',
-         '1/4': '25vh'
-      },
-      screens: {
-         
-      },
-      backgroundColor: {
-         captBar: 'rgba(29, 53, 87, 0.2)',
-         arrowBox: 'rgba(196, 196, 196, 0.00001)',
-      },
-      boxShadow: {
-         logo: '4px 4px 4px 1px rgba(0, 0, 0, 0.25)',
-         captBar: '0px 5px 4px rgba(0, 0, 0, 0.25)',
-         arrowBox: '0px 0px 4px rgba(0, 0, 0, 0.5)'
-      },
-      fontFamily: {
-         //  "lato": ['Lato']
-      }
-   },
-},
-variants: {
-   extend: {},
-},
-plugins: [],
-} */

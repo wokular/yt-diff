@@ -1,10 +1,10 @@
 import React, { react, useState, useEffect, useMemo } from 'react'
-import debounce from 'lodash.debounce'
-import InfoText from './homeComponents/InfoText'
-import ImgCap from './imgCap'
-import ImageSlide from './homeComponents/ImageSlide'
-import BarItem from './homeComponents/barItem'
-import infoData from './infoData'
+
+import InfoText from '../homeComponents/InfoText'
+import ImgCap from '../imgCap'
+import ImageSlide from '../homeComponents/ImageSlide'
+import BarItem from '../homeComponents/barItem'
+import infoData from '../infoData'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -221,9 +221,9 @@ function Home() {
          <section className="btmHalfCont">
             <div className="startCont">
                <div className="startBtnCont">
-                  <button className="startBtn" onClick={() => {console.log("Hello")}}>
+                  <a className="startBtn" href="/differ">
                      <span className="startBtnBkg">Hit Start!</span>
-                  </button>
+                  </a>
                </div>
             </div>
             <div className="btmBarCont">
