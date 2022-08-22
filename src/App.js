@@ -5,12 +5,12 @@ import Error from './pageRouters/Error'
 import Settings from './pageRouters/Settings'
 import './index.css'
 import "animate.css"
-import { BrowserRouter as Routes, Switch, Route, Link } from 'react-router-dom'
+import { BrowserRouter, Routes, Switch, Route, Link } from 'react-router-dom'
 
 
 function App() {
    return (
-
+      <BrowserRouter>
       <Routes>
 
          <Route path="/" element={<Home />}></Route>
@@ -19,6 +19,7 @@ function App() {
          <Route path='*' element={<Error />}></Route>
 
       </Routes>
+      </BrowserRouter>
    );
 }
 
