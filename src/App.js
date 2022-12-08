@@ -3,9 +3,10 @@ import Home from './pageRouters/Home'
 import Differ from './pageRouters/Differ'
 import Error from './pageRouters/Error'
 import Settings from './pageRouters/Settings'
+import Test from './pageRouters/Test'
 import './index.css'
 import "animate.css"
-import { BrowserRouter as Routes, Switch, Route, Link } from 'react-router-dom'
+import { Routes, Switch, Route, Link } from 'react-router-dom'
 
 
 function App() {
